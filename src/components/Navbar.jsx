@@ -1,5 +1,6 @@
-import { Mail, Linkedin, Menu } from "lucide-react";
+import { Mail, Linkedin, Menu, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,8 +18,9 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 bg-black/60 border-b border-zinc-800">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="#" className="font-semibold tracking-tight text-white">
+        <a href="#" className="font-semibold tracking-tight text-white inline-flex items-center gap-2">
           <span className="text-orange-500">R</span>uben <span className="text-zinc-400">Vroman</span>
+          <motion.span initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.4 }} className="text-orange-400/90"><Sparkles size={16} /></motion.span>
         </a>
         <nav className="hidden md:block">{nav}</nav>
         <div className="flex items-center gap-3">
